@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/mustache.js/mustache.min.js"></script>
+    <title>template</title>
+    <script>
+        $(function () {
+            var person = {
+                name: "jay",
+                age: 22
+            };
+            var me = {
+                name:"박수빈",
+                age:22
+            };
+            var people = [person,me];
+            var tmpl = $("#personTpl").html();
+            var renderedHtml = Mustache.render(tmpl,people);
+            $("body").html(renderedHtml);
+
+        });
+    </script>
+</head>
+<body>
+<script type="text/template" id="personTpl">
+    {{#.}}
+    <h1>{{name}} 인적사항</h1>
+    <h2>나이</h2>
+    <p>{{age}}</p>
+    {{/.}}
+</script>
+</body>
+</html>

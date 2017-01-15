@@ -1,7 +1,32 @@
 /**
  * Created by imac04 on 2017-01-14.
  */
-$(function () {
+angular.module("sample",["ngRoute","user.service","user.controller"])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/home',{
+                templateUrl : "home/home.tmpl.html",
+                controller : "mainCtrl"
+            })
+            .when('/user',{
+                templateUrl : "user/user.tmpl.html",
+                controller : "userCtrl"
+            })
+            .otherwise({
+                redirectTo:"/home"
+            });
+    })
+    .run(function () {
+        console.log("App started.");
+    })
+
+    .controller("mainCtrl",function ($scope) {
+
+    });
+
+
+
+/*$(function () {
     var nameEI=$("from input#name");
     var askBtnEl=$("#ask-btn");
     var agePanelEl=$("#age");
@@ -32,4 +57,4 @@ $(function () {
         e.preventDefault();
     });
 
-});
+});*/

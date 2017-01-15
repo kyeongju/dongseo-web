@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sample">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <style>
+        form input#name{
+            color:red;
+        }
+    </style>
+
+</head>
+<body class="container" ng-controller="mainCtrl">
+    ok : <input class="form-control" ng-model="checked" type="checkbox">
+    <br>
+    if is ok we can move to next
+    <button class="btn btn-default" ng-if="checked">NEXT</button>
+</body>
+</html>

@@ -7,6 +7,7 @@
 bower install
 ```
 
+## bower
 -AngularJs
 --템플릿
 

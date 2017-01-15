@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sample">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <style>
+
+    </style>
+
+</head>
+<body class="container" ng-controller="mainCtrl">
+    <form name="userForm">
+        이름 : <input type="text" name="username" ng-model="name"
+                    ng-minlength="3" ng-required="true">
+        <br>
+        핸드폰 번호 : <input type="text" name="telephone" ng-model="tel" ng-pattern="/^\d{3}-\d{3,4}-\d{4}/">
+        <br>
+        이메일 : <input type="text" name="email" ng-model="email" ng-required="true">
+    </form>
+
+    <button class="btn btn-default" ng-click="sighUp(userForm)">가입하기</button>
+
+    <div class="well" ng-show="text">
+        {{text}}
+    </div>
+
+
+
+</body>
+</html>

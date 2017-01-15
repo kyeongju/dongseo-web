@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sample">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            color : #fff;
+        }
+        .black{background: #000;}
+
+    </style>
+
+</head>
+<body class="container" ng-controller="mainCtrl">
+    <div ng-click="handleEvent('click')" class="box black">click</div>
+    <div ng-dblclick="handleEvent('dblclick')" class="box black">dbClick</div>
+    <div ng-mouseleave="handleEvent('mouseleave')" class="box black">MouseLeave</div>
+    <input type="text" ng-keypress="handleEvent($event.keyCode+'pressed')">
+    <br>
+    <span>{{text}}</span>
+</body>
+</html>

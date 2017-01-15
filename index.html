@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sample">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="user/controller.js"></script>
+    <script src="user/service.js"></script>
     <script src="app.js"></script>
 
-    <style>
-        form input#name{
-            color:red;
-        }
-    </style>
 </head>
-<body>
-    <h1>jquery</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquam blanditiis, dolorum eos iusto magnam omnis quia, rerum saepe sint suscipit vero, voluptates. Error expedita molestiae quasi sapiente vel?
-    </p>
-    <form>
-        <input id="name" type="text">
-
-    </form>
-    <span id="age"></span>
-<button id="ask-btn">ask age</button>
+<body class="container" ng-controller="mainCtrl">
+    <div class="navbar navbar-default">
+    	<a class="navbar-brand" href="#">Title</a>
+    	<ul class="nav navbar-nav">
+    		<li class="active">
+    			<a href="#!/home">Home</a>
+    		</li>
+    		<li>
+    			<a href="#!/user">user</a>
+    		</li>
+    	</ul>
+    </div>
+    <ng-view></ng-view>
 </body>
 </html>
